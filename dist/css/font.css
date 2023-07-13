@@ -1,0 +1,19 @@
+@font-face {
+    font-family: plusj;
+    src: url(../fonts/PlusJakartaSans-Variable.ttf);
+  }
+  
+@font-face {
+    font-family: montserrat-semibold;
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+  }
+
+.left-header{
+    font-family: plusj;
+    font-weight: 800;
+}
+
+.rotatable-img-controller-circle{
+    font-family: montserrat-semibold;
+    font-weight: 600;
+}

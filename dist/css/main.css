@@ -1,0 +1,486 @@
+:root {
+    --md-source: #EBCFED;
+    --md-secondary: #7d0086;
+    /* primary */
+    --md-ref-palette-primary0: #000000;
+    --md-ref-palette-primary10: #330044;
+    --md-ref-palette-primary20: #4e165f;
+    --md-ref-palette-primary25: #5a226b;
+    --md-ref-palette-primary30: #672f78;
+    --md-ref-palette-primary35: #743b84;
+    --md-ref-palette-primary40: #814791;
+    --md-ref-palette-primary50: #9c60ac;
+    --md-ref-palette-primary60: #b879c8;
+    --md-ref-palette-primary70: #d594e4;
+    --md-ref-palette-primary80: #f1afff;
+    --md-ref-palette-primary90: #fbd7ff;
+    --md-ref-palette-primary95: #ffebfe;
+    --md-ref-palette-primary98: #fff7fb;
+    --md-ref-palette-primary99: #fffbff;
+    --md-ref-palette-primary100: #ffffff;
+    /* secondary */
+    --md-ref-palette-secondary0: #000000;
+    --md-ref-palette-secondary10: #37003b;
+    --md-ref-palette-secondary20: #590060;
+    --md-ref-palette-secondary25: #6c0073;
+    --md-ref-palette-secondary30: #7e0287;
+    --md-ref-palette-secondary35: #8c1b94;
+    --md-ref-palette-secondary40: #9b2ba1;
+    --md-ref-palette-secondary50: #b848bd;
+    --md-ref-palette-secondary60: #d663d9;
+    --md-ref-palette-secondary70: #f47ef6;
+    --md-ref-palette-secondary80: #ffa9fc;
+    --md-ref-palette-secondary90: #ffd6f9;
+    --md-ref-palette-secondary95: #ffebf9;
+    --md-ref-palette-secondary98: #fff7fa;
+    --md-ref-palette-secondary99: #fffbff;
+    --md-ref-palette-secondary100: #ffffff;
+    /* tertiary */
+    --md-ref-palette-tertiary0: #000000;
+    --md-ref-palette-tertiary10: #001f25;
+    --md-ref-palette-tertiary20: #00363f;
+    --md-ref-palette-tertiary25: #00424c;
+    --md-ref-palette-tertiary30: #004e5a;
+    --md-ref-palette-tertiary35: #005b69;
+    --md-ref-palette-tertiary40: #006877;
+    --md-ref-palette-tertiary50: #008396;
+    --md-ref-palette-tertiary60: #009fb5;
+    --md-ref-palette-tertiary70: #28bbd4;
+    --md-ref-palette-tertiary80: #52d7f0;
+    --md-ref-palette-tertiary90: #a4eeff;
+    --md-ref-palette-tertiary95: #d5f7ff;
+    --md-ref-palette-tertiary98: #effcff;
+    --md-ref-palette-tertiary99: #f7fdff;
+    --md-ref-palette-tertiary100: #ffffff;
+    /* neutral */
+    --md-ref-palette-neutral0: #000000;
+    --md-ref-palette-neutral10: #001f25;
+    --md-ref-palette-neutral20: #00363f;
+    --md-ref-palette-neutral25: #00424d;
+    --md-ref-palette-neutral30: #004e5b;
+    --md-ref-palette-neutral35: #005b69;
+    --md-ref-palette-neutral40: #006878;
+    --md-ref-palette-neutral50: #008396;
+    --md-ref-palette-neutral60: #009fb6;
+    --md-ref-palette-neutral70: #29bbd5;
+    --md-ref-palette-neutral80: #53d7f1;
+    --md-ref-palette-neutral90: #a6eeff;
+    --md-ref-palette-neutral95: #d6f6ff;
+    --md-ref-palette-neutral98: #effbff;
+    --md-ref-palette-neutral99: #f8fdff;
+    --md-ref-palette-neutral100: #ffffff;
+    /* neutral-variant */
+    --md-ref-palette-neutral-variant0: #000000;
+    --md-ref-palette-neutral-variant10: #201921;
+    --md-ref-palette-neutral-variant20: #352e36;
+    --md-ref-palette-neutral-variant25: #413941;
+    --md-ref-palette-neutral-variant30: #4c444c;
+    --md-ref-palette-neutral-variant35: #585058;
+    --md-ref-palette-neutral-variant40: #645c64;
+    --md-ref-palette-neutral-variant50: #7e747d;
+    --md-ref-palette-neutral-variant60: #988e97;
+    --md-ref-palette-neutral-variant70: #b3a8b2;
+    --md-ref-palette-neutral-variant80: #cfc3cd;
+    --md-ref-palette-neutral-variant90: #ecdfe9;
+    --md-ref-palette-neutral-variant95: #faedf7;
+    --md-ref-palette-neutral-variant98: #fff7fb;
+    --md-ref-palette-neutral-variant99: #fffbff;
+    --md-ref-palette-neutral-variant100: #ffffff;
+    /* error */
+    --md-ref-palette-error0: #000000;
+    --md-ref-palette-error10: #410002;
+    --md-ref-palette-error20: #690005;
+    --md-ref-palette-error25: #7e0007;
+    --md-ref-palette-error30: #93000a;
+    --md-ref-palette-error35: #a80710;
+    --md-ref-palette-error40: #ba1a1a;
+    --md-ref-palette-error50: #de3730;
+    --md-ref-palette-error60: #ff5449;
+    --md-ref-palette-error70: #ff897d;
+    --md-ref-palette-error80: #ffb4ab;
+    --md-ref-palette-error90: #ffdad6;
+    --md-ref-palette-error95: #ffedea;
+    --md-ref-palette-error98: #fff8f7;
+    --md-ref-palette-error99: #fffbff;
+    --md-ref-palette-error100: #ffffff;
+    /* light */
+    --md-sys-color-primary-light: #814791;
+    --md-sys-color-on-primary-light: #ffffff;
+    --md-sys-color-primary-container-light: #fbd7ff;
+    --md-sys-color-on-primary-container-light: #330044;
+    --md-sys-color-secondary-light: #9b2ba1;
+    --md-sys-color-on-secondary-light: #ffffff;
+    --md-sys-color-secondary-container-light: #ffd6f9;
+    --md-sys-color-on-secondary-container-light: #37003b;
+    --md-sys-color-tertiary-light: #006877;
+    --md-sys-color-on-tertiary-light: #ffffff;
+    --md-sys-color-tertiary-container-light: #a4eeff;
+    --md-sys-color-on-tertiary-container-light: #001f25;
+    --md-sys-color-error-light: #ba1a1a;
+    --md-sys-color-error-container-light: #ffdad6;
+    --md-sys-color-on-error-light: #ffffff;
+    --md-sys-color-on-error-container-light: #410002;
+    --md-sys-color-background-light: #f8fdff;
+    --md-sys-color-on-background-light: #001f25;
+    --md-sys-color-surface-light: #f8fdff;
+    --md-sys-color-on-surface-light: #001f25;
+    --md-sys-color-surface-variant-light: #ecdfe9;
+    --md-sys-color-on-surface-variant-light: #4c444c;
+    --md-sys-color-outline-light: #7e747d;
+    --md-sys-color-inverse-on-surface-light: #d6f6ff;
+    --md-sys-color-inverse-surface-light: #00363f;
+    --md-sys-color-inverse-primary-light: #f1afff;
+    --md-sys-color-shadow-light: #000000;
+    --md-sys-color-surface-tint-light: #814791;
+    --md-sys-color-outline-variant-light: #cfc3cd;
+    --md-sys-color-scrim-light: #000000;
+    /* dark */
+    --md-sys-color-primary-dark: #f1afff;
+    --md-sys-color-on-primary-dark: #4e165f;
+    --md-sys-color-primary-container-dark: #672f78;
+    --md-sys-color-on-primary-container-dark: #fbd7ff;
+    --md-sys-color-secondary-dark: #ffa9fc;
+    --md-sys-color-on-secondary-dark: #590060;
+    --md-sys-color-secondary-container-dark: #7e0287;
+    --md-sys-color-on-secondary-container-dark: #ffd6f9;
+    --md-sys-color-tertiary-dark: #52d7f0;
+    --md-sys-color-on-tertiary-dark: #00363f;
+    --md-sys-color-tertiary-container-dark: #004e5a;
+    --md-sys-color-on-tertiary-container-dark: #a4eeff;
+    --md-sys-color-error-dark: #ffb4ab;
+    --md-sys-color-error-container-dark: #93000a;
+    --md-sys-color-on-error-dark: #690005;
+    --md-sys-color-on-error-container-dark: #ffdad6;
+    --md-sys-color-background-dark: #001f25;
+    --md-sys-color-on-background-dark: #a6eeff;
+    --md-sys-color-surface-dark: #001f25;
+    --md-sys-color-on-surface-dark: #a6eeff;
+    --md-sys-color-surface-variant-dark: #4c444c;
+    --md-sys-color-on-surface-variant-dark: #cfc3cd;
+    --md-sys-color-outline-dark: #988e97;
+    --md-sys-color-inverse-on-surface-dark: #001f25;
+    --md-sys-color-inverse-surface-dark: #a6eeff;
+    --md-sys-color-inverse-primary-dark: #814791;
+    --md-sys-color-shadow-dark: #000000;
+    --md-sys-color-surface-tint-dark: #f1afff;
+    --md-sys-color-outline-variant-dark: #4c444c;
+    --md-sys-color-scrim-dark: #000000;
+    /* display - large */
+    --md-sys-typescale-display-large-font-family-name: Roboto;
+    --md-sys-typescale-display-large-font-family-style: Regular;
+    --md-sys-typescale-display-large-font-weight: 400px;
+    --md-sys-typescale-display-large-font-size: 57px;
+    --md-sys-typescale-display-large-line-height: 64px;
+    --md-sys-typescale-display-large-letter-spacing: -0.25px;
+    /* display - medium */
+    --md-sys-typescale-display-medium-font-family-name: Roboto;
+    --md-sys-typescale-display-medium-font-family-style: Regular;
+    --md-sys-typescale-display-medium-font-weight: 400px;
+    --md-sys-typescale-display-medium-font-size: 45px;
+    --md-sys-typescale-display-medium-line-height: 52px;
+    --md-sys-typescale-display-medium-letter-spacing: 0px;
+    /* display - small */
+    --md-sys-typescale-display-small-font-family-name: Roboto;
+    --md-sys-typescale-display-small-font-family-style: Regular;
+    --md-sys-typescale-display-small-font-weight: 400px;
+    --md-sys-typescale-display-small-font-size: 36px;
+    --md-sys-typescale-display-small-line-height: 44px;
+    --md-sys-typescale-display-small-letter-spacing: 0px;
+    /* headline - large */
+    --md-sys-typescale-headline-large-font-family-name: Roboto;
+    --md-sys-typescale-headline-large-font-family-style: Regular;
+    --md-sys-typescale-headline-large-font-weight: 400px;
+    --md-sys-typescale-headline-large-font-size: 32px;
+    --md-sys-typescale-headline-large-line-height: 40px;
+    --md-sys-typescale-headline-large-letter-spacing: 0px;
+    /* headline - medium */
+    --md-sys-typescale-headline-medium-font-family-name: Roboto;
+    --md-sys-typescale-headline-medium-font-family-style: Regular;
+    --md-sys-typescale-headline-medium-font-weight: 400px;
+    --md-sys-typescale-headline-medium-font-size: 28px;
+    --md-sys-typescale-headline-medium-line-height: 36px;
+    --md-sys-typescale-headline-medium-letter-spacing: 0px;
+    /* headline - small */
+    --md-sys-typescale-headline-small-font-family-name: Roboto;
+    --md-sys-typescale-headline-small-font-family-style: Regular;
+    --md-sys-typescale-headline-small-font-weight: 400px;
+    --md-sys-typescale-headline-small-font-size: 24px;
+    --md-sys-typescale-headline-small-line-height: 32px;
+    --md-sys-typescale-headline-small-letter-spacing: 0px;
+    /* body - large */
+    --md-sys-typescale-body-large-font-family-name: Roboto;
+    --md-sys-typescale-body-large-font-family-style: Regular;
+    --md-sys-typescale-body-large-font-weight: 400px;
+    --md-sys-typescale-body-large-font-size: 16px;
+    --md-sys-typescale-body-large-line-height: 24px;
+    --md-sys-typescale-body-large-letter-spacing: 0.50px;
+    /* body - medium */
+    --md-sys-typescale-body-medium-font-family-name: Roboto;
+    --md-sys-typescale-body-medium-font-family-style: Regular;
+    --md-sys-typescale-body-medium-font-weight: 400px;
+    --md-sys-typescale-body-medium-font-size: 14px;
+    --md-sys-typescale-body-medium-line-height: 20px;
+    --md-sys-typescale-body-medium-letter-spacing: 0.25px;
+    /* body - small */
+    --md-sys-typescale-body-small-font-family-name: Roboto;
+    --md-sys-typescale-body-small-font-family-style: Regular;
+    --md-sys-typescale-body-small-font-weight: 400px;
+    --md-sys-typescale-body-small-font-size: 12px;
+    --md-sys-typescale-body-small-line-height: 16px;
+    --md-sys-typescale-body-small-letter-spacing: 0.40px;
+    /* label - large */
+    --md-sys-typescale-label-large-font-family-name: Roboto;
+    --md-sys-typescale-label-large-font-family-style: Medium;
+    --md-sys-typescale-label-large-font-weight: 500px;
+    --md-sys-typescale-label-large-font-size: 14px;
+    --md-sys-typescale-label-large-line-height: 20px;
+    --md-sys-typescale-label-large-letter-spacing: 0.10px;
+    /* label - medium */
+    --md-sys-typescale-label-medium-font-family-name: Roboto;
+    --md-sys-typescale-label-medium-font-family-style: Medium;
+    --md-sys-typescale-label-medium-font-weight: 500px;
+    --md-sys-typescale-label-medium-font-size: 12px;
+    --md-sys-typescale-label-medium-line-height: 16px;
+    --md-sys-typescale-label-medium-letter-spacing: 0.50px;
+    /* label - small */
+    --md-sys-typescale-label-small-font-family-name: Roboto;
+    --md-sys-typescale-label-small-font-family-style: Medium;
+    --md-sys-typescale-label-small-font-weight: 500px;
+    --md-sys-typescale-label-small-font-size: 11px;
+    --md-sys-typescale-label-small-line-height: 16px;
+    --md-sys-typescale-label-small-letter-spacing: 0.50px;
+    /* title - large */
+    --md-sys-typescale-title-large-font-family-name: Roboto;
+    --md-sys-typescale-title-large-font-family-style: Regular;
+    --md-sys-typescale-title-large-font-weight: 400px;
+    --md-sys-typescale-title-large-font-size: 22px;
+    --md-sys-typescale-title-large-line-height: 28px;
+    --md-sys-typescale-title-large-letter-spacing: 0px;
+    /* title - medium */
+    --md-sys-typescale-title-medium-font-family-name: Roboto;
+    --md-sys-typescale-title-medium-font-family-style: Medium;
+    --md-sys-typescale-title-medium-font-weight: 500px;
+    --md-sys-typescale-title-medium-font-size: 16px;
+    --md-sys-typescale-title-medium-line-height: 24px;
+    --md-sys-typescale-title-medium-letter-spacing: 0.15px;
+    /* title - small */
+    --md-sys-typescale-title-small-font-family-name: Roboto;
+    --md-sys-typescale-title-small-font-family-style: Medium;
+    --md-sys-typescale-title-small-font-weight: 500px;
+    --md-sys-typescale-title-small-font-size: 14px;
+    --md-sys-typescale-title-small-line-height: 20px;
+    --md-sys-typescale-title-small-letter-spacing: 0.10px;
+  }
+
+/******************* ICONS ***********************/
+
+body{
+    display: flex;
+}
+
+.rotatable-img-controller-icons{
+    color: var(--md-secondary);
+    font-size: 4rem;
+    padding: 0 40px 0 40px;
+}
+
+.left-side-inner-controllers{
+    color: var(--md-secondary);
+    font-size: 4rem;
+    padding: 0 40px 0 40px;
+}
+
+.information-column-icons{
+    color: var(--md-secondary);
+    font-size: 2rem;
+}
+
+/************************* LEFT SIDE ************************/
+.left-side{
+    width: 60%;
+    height: 100%;
+    padding: 40px 10px 40px 40px;
+}
+
+.left-side-inner{
+    background-color: var(--md-source);
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;  
+}
+
+.left-side-left-arrow{
+    height: 100%;
+    width: 15%;
+    flex: 1;
+    display: flex;
+    align-items: center;  
+}
+
+.left-side-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rotatable-img-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.rotatable-img{
+    width: 60%;
+}
+
+.rotatable-img-controller{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20%;
+}
+
+.rotatable-img-controller-circle{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    background-color: var(--md-ref-palette-primary100);
+    margin: -2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+.information-column{
+    width: 660px; 
+    height: 64px; 
+    padding-left: 40px;
+    padding-right: 40px;
+    background: #FDFAFE;
+    box-shadow: 0px 7px 14px rgba(125, 0, 134, 0.33);
+    border-radius: 99px;
+    overflow: hidden;
+    border-left: 1px #7D0086 solid;
+    border-top: 1px #7D0086 solid;
+    border-right: 1px #7D0086 solid;
+    border-bottom: 1px #7D0086 solid;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    display: inline-flex;
+    margin-bottom: 4rem;
+}
+
+.information-column-divider{
+    height: 100%;
+    width: 2px;
+    background-color: #7D0086;
+
+}
+
+.slider-nav{
+    width: 284px; 
+    height: 40px; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 24px; 
+    display: inline-flex;
+}
+
+.slider-nav-items{
+    width: 20px; 
+    height: 20px; 
+    background: #FDFAFE; 
+    border-radius: 100%;
+}
+
+.slider-nav-items-selected{
+    width: 20px; 
+    height: 20px; 
+    background: #7D0086; 
+    box-shadow: 0px 4px 4px rgba(125, 0, 134, 0.24); 
+    border-radius: 100%;
+}
+
+/************************* RIGHT SIDE ************************/
+
+.right-side{
+    width: 40%;
+    height: 100%;
+    padding: 40px 40px 40px 10px;
+}
+
+#right-side-inner{
+    background-color: var(--md-source);
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+}
+
+.chooser{
+    height: 5rem;
+    width: 90%;
+    background-color: #1B1F24;
+    border-radius: 1rem;
+    margin: 2rem 2rem -1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+}
+
+.chooser-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #0B0F10;
+    height: 4rem;
+    width: 20%;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
+
+.chooser-title-invisible{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #0B0F10;
+    height: 4rem;
+    width: 20%;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    visibility: hidden;
+}
+
+.chooser-option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: normal;
+    font-size: 1.5rem;
+    color: #7D0086;
+    background-color: #FDFAFE;
+    height: 4rem;
+    width: 80%;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 1rem;
+}

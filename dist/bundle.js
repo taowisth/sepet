@@ -35,10 +35,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n/* harmony import */ var _queries_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./queries.js */ \"./src/queries.js\");\n\n\n\n\n// For Firebase JS SDK v7.20.0 and later, measurementId is optional\nconst firebaseConfig = {\n    apiKey: \"AIzaSyAi403RTaV0FA-dkJZmh71AUKKNNR5s4y8\",\n    authDomain: \"sepe-c49a5.firebaseapp.com\",\n    projectId: \"sepe-c49a5\",\n    storageBucket: \"sepe-c49a5.appspot.com\",\n    messagingSenderId: \"589049197966\",\n    appId: \"1:589049197966:web:4cf17b3346c7459b3260df\",\n    measurementId: \"G-J49EBC83VM\"\n  }\n\n// INIT FIREBASE APP\n;(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig)\n\n// INNIT SERVICES\nconst db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getFirestore)()\n\n// ARRAYS\nconst objectRef = [];\nconst items = []\n\n// ACTION LISTENER END\n\n// COLLECTION REF\nconst categoriesRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, _queries_js__WEBPACK_IMPORTED_MODULE_2__.queries[2]);\nconst docsSnap = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(categoriesRef);\n\nqueryRunner(docsSnap);\n\nfunction queryRunner(docQ) {\n    docQ.forEach(doc => {\n        objectRef.push(doc.data())\n        const array = Object.entries(objectRef[0]);\n        for (let i = 0; i < array.length; i++) {\n            items.push([array[i][1][0], array[i][1][1]]);\n        }\n        console.log(items);\n    })\n}\n\n//DATA FETCH\nfor (let i = 0; i < items.length; i++){\n    const itemsRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, \"items/2W0jVddrrrzAdA6F7ZJS/\" + items[i][0]);\n    const docsSnap2 = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(itemsRef);\n    const itemName = [];\n\n    docsSnap2.forEach(doc => {\n        itemName.push(doc.data());\n        console.log(itemName[0][\"name\"]);\n        document.getElementById(\"left-header\").innerHTML = itemName[0][\"name\"];\n    })\n\n    setInterval(function(){ \n        console.log(\"deneme\")\n    }, 5000);\n    \n}\n\n  \n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://sepet/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n/* harmony import */ var _queries_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./queries.js */ \"./src/queries.js\");\n\n\n\n\n// For Firebase JS SDK v7.20.0 and later, measurementId is optional\nconst firebaseConfig = {\n    apiKey: \"AIzaSyAi403RTaV0FA-dkJZmh71AUKKNNR5s4y8\",\n    authDomain: \"sepe-c49a5.firebaseapp.com\",\n    projectId: \"sepe-c49a5\",\n    storageBucket: \"sepe-c49a5.appspot.com\",\n    messagingSenderId: \"589049197966\",\n    appId: \"1:589049197966:web:4cf17b3346c7459b3260df\",\n    measurementId: \"G-J49EBC83VM\"\n  }\n\n// INIT FIREBASE APP\n;(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig)\n\n// INNIT SERVICES\nconst db = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getFirestore)()\n\n//DATA FETCH\nsetInterval(async function(){   \n    // ARRAYS\n    const objectRef = [];\n    const items = []\n\n    // COLLECTION REF\n    const categoriesRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, _queries_js__WEBPACK_IMPORTED_MODULE_2__.queries[2]);\n    const docsSnap = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(categoriesRef);\n\n    queryRunner(docsSnap);\n\n    function queryRunner(docQ) {\n        docQ.forEach(doc => {\n            objectRef.push(doc.data())\n            const array = Object.entries(objectRef[0]);\n            for (let i = 0; i < array.length; i++) {\n                items.push([array[i][1][0], array[i][1][1]]);\n            }\n            console.log(items);\n        })\n    }\n\n    //PULL AND WRITE DATA\n    const totalOfOptions = document.getElementsByClassName(\"chooser-option\");    \n    for (let j = 0; totalOfOptions.length; j++){\n        if (isNaN(parseInt(document.getElementsByClassName(\"chooser-option\")[j].id))){}\n        else {\n            for (let i = 0; i < items.length; i++){\n                const itemsRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(db, \"items/2W0jVddrrrzAdA6F7ZJS/\" + items[i][0]);\n                const docsSnap2 = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(itemsRef);\n                const itemName = [];\n            \n                docsSnap2.forEach(doc => {\n                    itemName.push(doc.data());\n                    console.log(itemName[0][\"name\"]);\n                    document.getElementById(\"left-header\").innerHTML = itemName[0][\"name\"];\n                })\n            }\n        }\n    }\n}, 5000);\n\n\n//# sourceURL=webpack://sepet/./src/index.js?");
 
 /***/ }),
 
@@ -178,75 +178,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/async module */
-/******/ 	(() => {
-/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
-/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
-/******/ 		var resolveQueue = (queue) => {
-/******/ 			if(queue && queue.d < 1) {
-/******/ 				queue.d = 1;
-/******/ 				queue.forEach((fn) => (fn.r--));
-/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
-/******/ 			}
-/******/ 		}
-/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
-/******/ 			if(dep !== null && typeof dep === "object") {
-/******/ 				if(dep[webpackQueues]) return dep;
-/******/ 				if(dep.then) {
-/******/ 					var queue = [];
-/******/ 					queue.d = 0;
-/******/ 					dep.then((r) => {
-/******/ 						obj[webpackExports] = r;
-/******/ 						resolveQueue(queue);
-/******/ 					}, (e) => {
-/******/ 						obj[webpackError] = e;
-/******/ 						resolveQueue(queue);
-/******/ 					});
-/******/ 					var obj = {};
-/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
-/******/ 					return obj;
-/******/ 				}
-/******/ 			}
-/******/ 			var ret = {};
-/******/ 			ret[webpackQueues] = x => {};
-/******/ 			ret[webpackExports] = dep;
-/******/ 			return ret;
-/******/ 		}));
-/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
-/******/ 			var queue;
-/******/ 			hasAwait && ((queue = []).d = -1);
-/******/ 			var depQueues = new Set();
-/******/ 			var exports = module.exports;
-/******/ 			var currentDeps;
-/******/ 			var outerResolve;
-/******/ 			var reject;
-/******/ 			var promise = new Promise((resolve, rej) => {
-/******/ 				reject = rej;
-/******/ 				outerResolve = resolve;
-/******/ 			});
-/******/ 			promise[webpackExports] = exports;
-/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
-/******/ 			module.exports = promise;
-/******/ 			body((deps) => {
-/******/ 				currentDeps = wrapDeps(deps);
-/******/ 				var fn;
-/******/ 				var getResult = () => (currentDeps.map((d) => {
-/******/ 					if(d[webpackError]) throw d[webpackError];
-/******/ 					return d[webpackExports];
-/******/ 				}))
-/******/ 				var promise = new Promise((resolve) => {
-/******/ 					fn = () => (resolve(getResult));
-/******/ 					fn.r = 0;
-/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
-/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
-/******/ 				});
-/******/ 				return fn.r ? promise : getResult();
-/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
-/******/ 			queue && queue.d < 0 && (queue.d = 0);
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

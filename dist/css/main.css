@@ -323,7 +323,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 70%;
 }
 
 .rotatable-img-content{
@@ -360,7 +360,6 @@ body{
 }
 
 .information-column{
-    width: 660px; 
     height: 64px; 
     padding-left: 40px;
     padding-right: 40px;

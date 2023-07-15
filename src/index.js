@@ -21,45 +21,45 @@ initializeApp(firebaseConfig)
 // INNIT SERVICES
 const db = getFirestore()
 
-// ARRAYS
-const objectRef = [];
-const items = []
-
-// ACTION LISTENER END
-
-// COLLECTION REF
-const categoriesRef = collection(db, queries[2]);
-const docsSnap = await getDocs(categoriesRef);
-
-queryRunner(docsSnap);
-
-function queryRunner(docQ) {
-    docQ.forEach(doc => {
-        objectRef.push(doc.data())
-        const array = Object.entries(objectRef[0]);
-        for (let i = 0; i < array.length; i++) {
-            items.push([array[i][1][0], array[i][1][1]]);
-        }
-        console.log(items);
-    })
-}
-
 //DATA FETCH
-for (let i = 0; i < items.length; i++){
-    const itemsRef = collection(db, "items/2W0jVddrrrzAdA6F7ZJS/" + items[i][0]);
-    const docsSnap2 = await getDocs(itemsRef);
-    const itemName = [];
+setInterval(async function(){   
+    // ARRAYS
+    const objectRef = [];
+    const items = []
 
-    docsSnap2.forEach(doc => {
-        itemName.push(doc.data());
-        console.log(itemName[0]["name"]);
-        document.getElementById("left-header").innerHTML = itemName[0]["name"];
-    })
+    // COLLECTION REF
+    const categoriesRef = collection(db, queries[2]);
+    const docsSnap = await getDocs(categoriesRef);
 
-    setInterval(function(){ 
-        console.log("deneme")
-    }, 5000);
-    
-}
+    queryRunner(docsSnap);
 
-  
+    function queryRunner(docQ) {
+        docQ.forEach(doc => {
+            objectRef.push(doc.data())
+            const array = Object.entries(objectRef[0]);
+            for (let i = 0; i < array.length; i++) {
+                items.push([array[i][1][0], array[i][1][1]]);
+            }
+            console.log(items);
+        })
+    }
+
+    //PULL AND WRITE DATA
+    const totalOfOptions = document.getElementsByClassName("chooser-option");    
+    for (let j = 0; totalOfOptions.length; j++){
+        if (isNaN(parseInt(document.getElementsByClassName("chooser-option")[j].id))){}
+        else {
+            for (let i = 0; i < items.length; i++){
+                const itemsRef = collection(db, "items/2W0jVddrrrzAdA6F7ZJS/" + items[i][0]);
+                const docsSnap2 = await getDocs(itemsRef);
+                const itemName = [];
+            
+                docsSnap2.forEach(doc => {
+                    itemName.push(doc.data());
+                    console.log(itemName[0]["name"]);
+                    document.getElementById("left-header").innerHTML = itemName[0]["name"];
+                })
+            }
+        }
+    }
+}, 5000);

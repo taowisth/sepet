@@ -2,7 +2,8 @@ import { initializeApp } from 'firebase/app'
 import {
     getFirestore, collection, getDocs, doc
 } from 'firebase/firestore'
-import { queries } from './queries.js'
+import { queries1 } from './queries.js'
+import { b, c } from './queryPull.js';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -20,15 +21,19 @@ initializeApp(firebaseConfig)
 
 // INNIT SERVICES
 const db = getFirestore()
-
+b();
+c();
 //DATA FETCH
 setInterval(async function(){   
     // ARRAYS
     const objectRef = [];
     const items = []
 
+    //QUERY SELECTOR
+    const doneQuery = parseInt(document.getElementsByClassName("chooser-option-done")[0].getElementsByClassName("chooser-option")[0].id);
+    
     // COLLECTION REF
-    const categoriesRef = collection(db, queries[2]);
+    const categoriesRef = collection(db, queries1[doneQuery]);
     const docsSnap = await getDocs(categoriesRef);
 
     queryRunner(docsSnap);

@@ -1,0 +1,2 @@
+let storedData = [];
+export { storedData };

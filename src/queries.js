@@ -1,4 +1,4 @@
-var queryPull = require("./queryPull.js");
+var queryPull = require("./store.js");
 
 const pathWays = [
     [1, "categories/CFWV1obLaLyOUEcdwCMa/type/oNh9PELtjzP2wLPPBYZC/"],
@@ -20,4 +20,13 @@ const queries1 = [
     "categories/CFWV1obLaLyOUEcdwCMa/size/FVb0kcik0hbvM9AHNVE9/large"
 ]
 
-export { queries1 };
+const dildoParameters = [
+    "name",
+    "rate",
+    "height",
+    "diameter",
+    "color",
+    "type"
+]
+
+export { queries1, dildoParameters };

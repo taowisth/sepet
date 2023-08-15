@@ -7,14 +7,15 @@ const items = [
         ["extra", "extra Dildos (10 to 13 cm)"]
     ],
     [
-        "realistic", 
-        "vibrating", 
-        "g-spot", 
-        "anal"
+        ["<div class=\"chooser-title\">Type</div><div id=\"firstQuery\" class=\"chooser-option\">Select an Option</div>"],
+        ["realistic", "Realistic Dildos"], 
+        ["vibrating", "Vibrating Dildos"], 
+        ["g-spot", "G-Spot Dildos"], 
+        ["anal", "Anal Dildos"]
     ]
 ]
 function queryCaller(queryNumber) {
-    if (queryNumber == 0){
+    if (queryNumber == queryNumber){
         document.getElementsByClassName("chooser")[queryNumber].innerHTML = items[queryNumber][0];
         for (let i = 1; i < items[queryNumber].length; i++){
             document.getElementById("chooser-list-"+queryNumber).innerHTML += 
@@ -35,17 +36,18 @@ const observer = new MutationObserver(function(mutationsList, observer) {
     
     function querySelectorInner() {
         for (let i = 1; totalOfOptions.length; i++){
-            if (isNaN(parseInt(document.getElementsByClassName("chooser-option")[i].id))){} 
+            var chooserOptionId = parseInt(document.getElementsByClassName("chooser-option")[i].id);
+            if (isNaN(chooserOptionId)){} 
             else {
-                var chooserOptionId = parseInt(document.getElementsByClassName("chooser-option")[i].id);
-                if (isNaN(chooserOptionId)){
-                } else if(chooserOptionId = 1){
-                    console.log(i);
+                if (isNaN(chooserOptionId)){} 
+                else if(chooserOptionId = 1){
                     document.getElementById("chooser-list-"+0).innerHTML = "<div class=\"chooser chooser-option-done\"><div class=\"chooser-title\">Size</div><div onclick=\"queryCaller(0)\" id=\""+i+"\" class=\"chooser-option\">Select an Option</div></div>";
                     const doneQueryTotal = document.getElementsByClassName("chooser-option-done");
                     for (let j = 1; doneQueryTotal.length; j++){
                         if (parseInt(document.getElementsByClassName("chooser-option-done")[j-1].getElementsByClassName("chooser-option")[j-1].id) == i){
                             document.getElementById("query"+j).id = i;
+                            const j2 = j;
+                            document.getElementById("right-side-inner").innerHTML += "<div id=\"chooser-list-"+j2+"\"><div class=\"chooser\"><div onclick=\"queryCaller("+j+")\" class=\"chooser-title\">Size</div><div onclick=\"queryCaller("+j+")\" id=\"firstQuery\" class=\"chooser-option\">Select an Option</div></div></div>";
                         } else{};
                     }
                 }

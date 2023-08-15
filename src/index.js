@@ -2,8 +2,8 @@ import { initializeApp } from 'firebase/app'
 import {
     getFirestore, collection, getDocs, doc
 } from 'firebase/firestore'
-import { queries1 } from './queries.js'
-import { b, c } from './queryPull.js';
+import { queries1, dildoParameters } from './queries.js'
+import { storedData } from './store.js'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -21,50 +21,61 @@ initializeApp(firebaseConfig)
 
 // INNIT SERVICES
 const db = getFirestore()
-b();
-c();
+
+
 //DATA FETCH
-setInterval(async function(){   
-    // ARRAYS
-    const objectRef = [];
-    const items = []
-
-    //QUERY SELECTOR
-    const doneQuery = parseInt(document.getElementsByClassName("chooser-option-done")[0].getElementsByClassName("chooser-option")[0].id);
-    
-    // COLLECTION REF
-    const categoriesRef = collection(db, queries1[doneQuery]);
-    const docsSnap = await getDocs(categoriesRef);
-
-    queryRunner(docsSnap);
-
-    function queryRunner(docQ) {
-        docQ.forEach(doc => {
-            objectRef.push(doc.data())
-            const array = Object.entries(objectRef[0]);
-            for (let i = 0; i < array.length; i++) {
-                items.push([array[i][1][0], array[i][1][1]]);
-            }
-            console.log(items);
-        })
-    }
-
-    //PULL AND WRITE DATA
+setInterval(async function() {
     const totalOfOptions = document.getElementsByClassName("chooser-option");    
-    for (let j = 0; totalOfOptions.length; j++){
-        if (isNaN(parseInt(document.getElementsByClassName("chooser-option")[j].id))){}
-        else {
-            for (let i = 0; i < items.length; i++){
-                const itemsRef = collection(db, "items/2W0jVddrrrzAdA6F7ZJS/" + items[i][0]);
-                const docsSnap2 = await getDocs(itemsRef);
-                const itemName = [];
-            
-                docsSnap2.forEach(doc => {
-                    itemName.push(doc.data());
-                    console.log(itemName[0]["name"]);
-                    document.getElementById("left-header").innerHTML = itemName[0]["name"];
-                })
-            }
+
+    for (let j = 0; j < totalOfOptions.length; j++) {
+        if (!isNaN(parseInt(document.getElementsByClassName("chooser-option")[j].id))) {
+            const doneQuery = parseInt(document.getElementsByClassName("chooser-option-done")[0].getElementsByClassName("chooser-option")[0].id);
+            const categoriesRef = collection(db, queries1[doneQuery]);
+            const docsSnap = await getDocs(categoriesRef);
+
+            await queryRunner(docsSnap);
         }
     }
-}, 5000);
+}, 15000);
+
+async function queryRunner(docQ) {
+    const items = [];
+    
+    docQ.forEach(doc => {
+        const data = doc.data();
+        const dataArray = Object.entries(data);
+        
+        for (let i = 0; i < dataArray.length; i++) {
+            items.push({ id: dataArray[i][0], value: dataArray[i][1][0] });
+        }
+    });
+
+    //PULL AND WRITE DATA
+    for (let i = 0; i < items.length; i++) {
+        const itemsRef = collection(db, "items/2W0jVddrrrzAdA6F7ZJS/" + items[i].id);
+        const docsSnap2 = await getDocs(itemsRef);
+        const itemName = [];
+        
+        docsSnap2.forEach(doc => {
+            itemName.push(doc.data());
+
+            const itemData = { id: items[i].id, name: itemName[0]["name"] };
+            for (let j = 0; j < dildoParameters.length; j++) {
+                itemData[dildoParameters[j]] = itemName[0][dildoParameters[j]];
+            }
+
+            storedData.push(itemData);
+        });
+    }
+
+    // Remove null properties from storedData
+    for (let i = storedData.length - 1; i >= 0; i--) {
+        const itemData = storedData[i];
+        const isEmpty = Object.values(itemData).every(value => value === null);
+        if (isEmpty) {
+            storedData.splice(i, 1);
+        }
+    }
+
+    console.log(storedData);
+}
